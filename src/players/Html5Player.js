@@ -4,7 +4,7 @@ var Html5Player = function(prop){
   propToSet = prop;
 };
 
-Html5Player.prototype = Player; // prototype = the interface
+Html5Player.prototype = Object.create(Player); // prototype = the interface
 
 
 // override the interface in the prototype
