@@ -1,3 +1,9 @@
+/*
+* By programming to the interface (Player), we can create a really generic
+* controller that uses the same interface, but takes the dependency
+*(different implementation of players) injected in to peform the functionality.
+*/
+
 var player;
 var PlayerController = function(p){
   player = p; // injecting the dependency
