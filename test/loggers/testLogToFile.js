@@ -1,4 +1,4 @@
-describe("To test the LogToConsole logs expected msg's", function () {
+describe("To test the LogToConsole", function () {
 	var logger;
   var file;
 	beforeEach(function () {
@@ -13,28 +13,34 @@ describe("To test the LogToConsole logs expected msg's", function () {
 
 	});
 
-  //debug
-  it("should call file.writeDebug(log) when debug called", function(){
-    spyOn(file, "writeDebug");
-    logger.debug("debug");
-    expect(file.writeDebug).toHaveBeenCalled();
+  describe("LogToConsole.debug()", function() {
+
+    it("should call file.writeDebug(log)", function(){
+      spyOn(file, "writeDebug");
+      logger.debug("debug");
+      expect(file.writeDebug).toHaveBeenCalled();
+    });
+
+  	it("should set last log message", function() {
+      logger.debug("debug");
+      expect(logger.getLastLog()).toBe("debug");
+  	});
+
   });
 
-	it("logger.debug should set last log message", function() {
-    logger.debug("debug");
-    expect(logger.getLastLog()).toBe("debug");
-	});
+  describe("LogToConsole.error()", function() {
 
-  //error
-  it("should call file.writeError(log) when error called", function(){
-    spyOn(file, "writeError");
-    logger.error("error");
-    expect(file.writeError).toHaveBeenCalled();
+    it("should call file.writeError(log)", function(){
+      spyOn(file, "writeError");
+      logger.error("error");
+      expect(file.writeError).toHaveBeenCalled();
+    });
+
+  	it("should set last log message", function(){
+      logger.error("error");
+      expect(logger.getLastLog()).toBe("error");
+  	});
+
   });
-
-	it("logger.error should set last log message", function(){
-    logger.error("error");
-    expect(logger.getLastLog()).toBe("error");
-	});
 
 });
