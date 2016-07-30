@@ -3,7 +3,7 @@ var _lastLogMsg;
 
 var LogToFile = function(logFile){
   file = logFile;
-}
+};
 
 LogToFile.prototype = Object.create(Logger);
 
