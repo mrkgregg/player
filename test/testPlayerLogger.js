@@ -24,4 +24,12 @@ describe("To Test PlayerLogger", function () {
       expect(logger.debug).toHaveBeenCalled();
 	});
 
+  it("should be able to call player.isPlaying()", function() {
+      expect(player.isPlaying).toBeDefined();
+	});
+
+  it("should be able to call player.stop()", function() {
+      expect(player.stop).toBeDefined();
+  });
+
 });
