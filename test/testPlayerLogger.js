@@ -1,7 +1,7 @@
 describe("To Test PlayerLogger", function () {
   var console;
   var logger;
-  var html5Player;
+  var enhancedPlayer;
   var player;
 
 	beforeEach(function () {
@@ -10,12 +10,8 @@ describe("To Test PlayerLogger", function () {
       error: function(log){}
     };
     logger = new LogToConsole();
-    html5Player = new Html5Player("test");
-    player = new PlayerLogger(html5Player, logger);
-	});
-
-	afterEach(function () {
-
+    enhancedPlayer = new EnhancedPlayer("test");
+    player = new PlayerLogger(enhancedPlayer, logger);
 	});
 
 	it("should call logger.debug when playing a url", function() {

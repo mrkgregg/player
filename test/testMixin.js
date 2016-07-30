@@ -11,9 +11,7 @@ describe("To test Mixin", function () {
     subClass = {
       shouldBeOverride:  function(){return "This has been overriden";}
     };
-
 	});
-
 
 	it("should add properties of baseClass to subClass that aren't already defined", function() {
 			MIXIN(baseClass, subClass);

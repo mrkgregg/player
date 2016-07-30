@@ -1,7 +1,7 @@
-describe("To test the HTML5 player can play and stop content", function () {
+describe("To test the Enhanced player can play and stop content", function () {
 	var player;
 	beforeEach(function () {
-		player = new Html5Player("test");
+		player = new EnhancedPlayer("test");
 	});
 
 	afterEach(function () {

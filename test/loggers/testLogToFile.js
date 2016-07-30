@@ -9,10 +9,6 @@ describe("To test the LogToConsole", function () {
     logger = new LogToFile(file);
 	});
 
-	afterEach(function () {
-
-	});
-
   describe("LogToConsole.debug()", function() {
 
     it("should call file.writeDebug(log)", function(){

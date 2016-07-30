@@ -9,10 +9,6 @@ describe("To test the LogToConsole", function () {
     logger = new LogToConsole(console);
 	});
 
-	afterEach(function () {
-
-	});
-
   describe("LogToConsole.debug()", function() {
 
     it("should call console.log()", function(){
