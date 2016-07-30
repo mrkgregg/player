@@ -1,11 +1,10 @@
 var _isPlaying;
 var propToSet;
 var Html5Player = function(prop){
-  propToSet = prop; 
+  propToSet = prop;
 };
 
 Html5Player.prototype = Object.create(Player); // prototype = the interface
-
 
 // override the interface in the prototype
 Html5Player.prototype.play = function(url){

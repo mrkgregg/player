@@ -4,7 +4,7 @@ var LogToConsole = function(console){
   _console = console;
 };
 
-LogToConsole.prototype = Object.create(Logger);
+LogToConsole.prototype = Object.create(Logger); // prototype = the interface
 
 LogToConsole.prototype.debug = function(log){
   _console.log(log);
