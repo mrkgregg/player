@@ -3,7 +3,7 @@
 */
 var _player;
 var _logger;
-var PlayerLogger = function(player, logger){
+var PlayerLogger = function(player, logger){ // injecting the dependency
     _player = player;
     _logger = logger;
     MIXIN(player, this); // adds player param's properties to PlayerLogger (that aren't defined for PlayerLogger).
