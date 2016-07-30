@@ -1,5 +1,5 @@
 var _isPlaying;
-var propToSet;
+var propToSet; // simplified differentation between Standard / EnhancedPlayer
 var EnhancedPlayer = function(prop){
   propToSet = prop;
 };

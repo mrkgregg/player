@@ -13,7 +13,7 @@ describe("To test Mixin", function () {
     };
 	});
 
-	it("should add properties of baseClass to subClass that aren't already defined", function() {
+	it("should add properties of baseClass to subClass that aren't already defined in subClass", function() {
 			MIXIN(baseClass, subClass);
       expect(subClass.shouldBeAdded).toBeDefined();
 	});
