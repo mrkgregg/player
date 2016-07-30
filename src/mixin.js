@@ -7,5 +7,4 @@ var MIXIN = function(base, subClass){
       subClass[prop] = base[prop].bind(base);
     }
   }
-
-}
+};
