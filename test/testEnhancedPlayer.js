@@ -4,10 +4,6 @@ describe("To test the Enhanced player can play and stop content", function () {
 		player = new EnhancedPlayer("test");
 	});
 
-	afterEach(function () {
-
-	});
-
 	it("should play content when a url is passed to player.play", function() {
 			player.play("url");
 			expect(player.isPlaying()).toBe(true);
