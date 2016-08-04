@@ -11,6 +11,17 @@
 
 
 ##### TODO:
-  1. Create Pause Interface & Implementation
-  2. Create Logging, Pausing Player
-  3. Create State Obj to manage & encapsulate state of player (inject in also?)
+  1. Expose getPlayer / getLogger for decorator
+  2. Point 1 will allow the most reusuable way to create logging for pausing if wanted, as play(url) logging in PlayerLogger doesn't need reimplemented.*
+  2. Create State Obj to manage & encapsulate state of player (inject in also?)
+
+*Pseudo code:
+
+var PausePlayerLogger = function(playerLogger){
+  this.playerLogger = playerLogger;
+};
+
+PausePlayerLogger.prototype.pause = function(){
+  this.playerLogger.getLogger().debug("pausing");
+  playerLogger.getPlayer().pause();
+};
