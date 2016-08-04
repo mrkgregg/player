@@ -1,3 +1,4 @@
+// Simplified Logger - not expected to work. (Implementation not important to design pattern)
 var file;
 var _lastLogMsg;
 

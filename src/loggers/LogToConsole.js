@@ -1,3 +1,4 @@
+// Simplified Logger - not expected to work. (Implementation not important to design pattern)
 var _lastLogMsg;
 var _console;
 var LogToConsole = function(console){
