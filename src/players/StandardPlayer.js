@@ -15,6 +15,10 @@ StandardPlayer.prototype.isPlaying = function(){
   return _isPlaying;
 };
 
+StandardPlayer.prototype.setIsPlaying = function(isPlaying){
+  _isPlaying = isPlaying;
+};
+
 StandardPlayer.prototype.stop = function(){
   _isPlaying = false;
 };

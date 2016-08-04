@@ -1,0 +1,3 @@
+var PausePlayer = {
+  pause : function(){}
+};

@@ -15,6 +15,10 @@ EnhancedPlayer.prototype.isPlaying = function(){
   return _isPlaying;
 };
 
+EnhancedPlayer.prototype.setIsPlaying = function(isPlaying){
+  _isPlaying = isPlaying;
+};
+
 EnhancedPlayer.prototype.stop = function(){
   _isPlaying = false;
 };
