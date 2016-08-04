@@ -6,7 +6,7 @@ var _logger;
 var PlayerLogger = function(player, logger){ // injecting the dependency
     _player = player;
     _logger = logger;
-    MIXIN(player, this); // adds player param's properties to PlayerLogger (that aren't defined for PlayerLogger).
+    MIXIN(_player, this); // adds player param's properties to PlayerLogger (that aren't defined for PlayerLogger).
 };
 
 PlayerLogger.prototype.play = function(url){
@@ -41,5 +41,14 @@ var consoleLogger = new LogToConsole("ConsoleType");
 
 var standardConsoleLoggerPlayer = new PlayerLogger(standardPlayer, consoleLogger);
 
-standardConsoleLoggerPlayer.play("Mark's Second URL"); // logs Url to cosole
+standardConsoleLoggerPlayer.play("Mark's Second URL"); // logs Url to console
 standardConsoleLoggerPlayer.stop(); // calls stop method defined in EnhancedPlayer
+
+//Example 3: Pausing EnhancedPlayer with fileLogger (using vars defined in e.g.'s defined above)
+var pausingPlayer = new PausingPlayer(enhancedPlayer);
+var pausingFileLoggingPlayer = new PlayerLogger(pausingPlayer, fileLogger);
+
+pausingFileLoggingPlayer.play("Mark's Third URL"); // logs to fileLogger
+pausingFileLoggingPlayer.isPlaying(); //true
+pausingFileLoggingPlayer.pause();
+pausingFileLoggingPlayer.isPlaying();// false

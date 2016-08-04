@@ -3,6 +3,8 @@ describe("To Test PlayerLogger", function () {
   var logger;
   var enhancedPlayer;
   var player;
+  var pausingPlayer;
+  var pausingFileLoggingPlayer;
 
 	beforeEach(function () {
     console = {
@@ -26,6 +28,18 @@ describe("To Test PlayerLogger", function () {
 
   it("should be able to call player.stop()", function() {
       expect(player.stop).toBeDefined();
+  });
+
+  describe("test PlayerLogger with PausingPlayer", function(){
+    it("should manipulated isPlaying to true when playing and false when paused", function(){
+      pausingPlayer = new PausingPlayer(enhancedPlayer);
+      pausingFileLoggingPlayer = new PlayerLogger(pausingPlayer, fileLogger);
+      pausingFileLoggingPlayer.play("Mark's Third URL"); // logs to fileLogger
+      expect(pausingFileLoggingPlayer.isPlaying()).toBe(true);
+      pausingFileLoggingPlayer.pause();
+      expect(pausingFileLoggingPlayer.isPlaying()).toBe(false);
+    });
+
   });
 
 });
